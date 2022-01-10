@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+    <body>
+        <form action="" method="post">
+            <div class="input-form">
+              <input class="text-input" type="text" placeholder="Enter Player Tag" name="tag" value="{{
+                request.form.tag }}">
+              <input class="btn btn-default" type="submit" value="SEARCH">
+            </div>
+        </form>
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+        
+        <div class="input-form data-card">
+        {% for key in clanData %}
+          {% if clanData[key] | not_list_or_dict %}
+          <div class="data-container">
+            <div class="player-data">
+              <div class="key">{{ key }}</div>
+              <div class="value">{{ clanData[key] }}</div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+<p></p>
+<p></p>
+      <div class="input-form data-card">
+          {% for key in clanData %}
+            {% if clanData[key] | list_only %}
+              {% for li in clanData[key] %}
+                {% for di in li %}
+                  {% if di | not_list_or_dict %}
+                    <div class="data-container">
+                      <div class="player-data">
+                        <div class="key">{{ di }}</div>
+                        <div class="value">{{ li[di] }}</div>
+                      </div>
+                    </div>
+                  {% elif di | dict_only %}
+                    {% for el in di %}
+                      <div class="data-container">
+                        <div class="player-data">
+                          <div class="key">{{ el }}</div>
+                          <div class="value">{{ di[el] }}</div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+<p></p>
+<p></p>
+          {% for key in clanData %}
+            {% if clanData[key] | dict_only %}
+              <li>{{ key }} - {{ clanData[key] }}</li>
+            {% endif %}
+          {% endfor %}
+    </body>
+</html>
+
+
+<!-- 
+
+key = tag/name/expLevel
+clanData[key] = data within those keys
+
+-->

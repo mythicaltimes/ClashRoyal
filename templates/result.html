@@ -1,0 +1,9 @@
+<html>
+    <body>
+        {% for key in clanData %}
+            {% if clanData[key] | typecheck %}
+                <li>{{ key }} - {{ clanData[key] }}</li>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>

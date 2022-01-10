@@ -1,0 +1,74 @@
+html {
+    background-color: rgb(49, 49, 49);
+    font-family: monospace;
+}
+
+input[type="text"] {
+    font-size: 25px;
+    text-align: center;
+}
+
+.input-form {
+    background-color: grey;
+    border-radius: 8px;
+    display: inline-flex;
+    height: 50px;
+    margin: 0px 4px;
+    padding: 0px 5px;
+    width: 300px;
+}
+
+.input-form.data-card {
+    display: inline-block;
+    height: fit-content;
+}
+
+.text-input {
+    align-self: center;
+    background: white;
+    border: none;
+    border-radius: 6px;
+    font-family: monospace;
+    height: 40px;
+    margin-right: 6px;
+    width: 100%;
+}
+
+.btn {
+    align-self: center;
+    height: 40px;
+    border: 2px;
+    border-color: black;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px 12px;
+}
+
+.btn:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+.player-data {
+    background-color: lightgrey;
+    border-radius: 4px;
+    display: inline-flex;
+    height: fit-content;
+    font-size: 16px;
+    margin:  5px 0;
+    width: 100%;
+}
+
+.key {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-left: 4px;
+    width: auto;
+}
+
+.value {
+    margin-left: auto;
+    margin-right: 4px;
+}
