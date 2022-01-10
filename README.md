@@ -1,1 +1,1 @@
-Personal project for working with the Clash Royal API to pull player data and display it on a website using Flask and Python.
+Personal project for working with the [Clash Royal API](https://developer.clashroyale.com/) to pull player data and display it on a website using Flask and Python. The goal is to provide a user with the ability to pull their historical information and learn ways to improve their gameplay.
